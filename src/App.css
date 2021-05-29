@@ -1,38 +1,359 @@
-.App {
-  text-align: center;
+* {
+  font-family: "Montserrat", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #b1e193;
+}
+.body-over {
+  overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
+  width: 90%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  margin: 20px auto;
+}
+.logo {
+  margin: 10px 20px;
+  width: 50px;
+}
+.ham {
+  margin-top: -20px;
+  margin-right: 10px;
+  width: 35px;
+  float: right;
+  cursor: pointer;
+}
+.container {
+  width: 92%;
+  margin: 0 auto;
+  height: 100%;
+  overflow: hidden;
+}
+.h1-title {
+  text-align: center;
+  color: rgb(44, 44, 44);
+}
+.btn-cont {
+  width: 95%;
+  margin: 25px auto;
+  justify-content: space-between;
+  display: flex;
+}
+.choose-btn {
+  width: 90%;
+  justify-content: space-between;
+  display: flex;
+  margin: 0 auto;
+}
+.choose-btn button {
+  padding: 10px 25px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  background-color: #f19920;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.cur-cont {
+  display: block;
+  background-color: #3bb54a;
+  width: 95%;
+  margin: 25px auto;
+  border-radius: 15px;
+  padding: 15px 0;
+  position: relative;
+  max-width: 840px;
+}
+.min-btn {
+  top: 10px;
+  right: 30px;
+  position: absolute;
+  font-size: 30px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+}
+.cur-cont h3 {
+  color: white;
+  margin: 5px 0 5px 20px;
+  font-size: 16px;
 }
 
-@keyframes App-logo-spin {
+.cur-allcont {
+  display: none;
+}
+.rate-show {
+  display: block;
+}
+
+.decimal {
+  display: block;
+  margin: 20px 0 10px 20px;
+}
+.decimal label {
+  margin-left: 10px;
+  color: white;
+  font-weight: 600;
+}
+.decimal input[type="checkbox"] {
+  transform: scale(1.2);
+}
+
+.rate-cont {
+  display: flex;
+  margin: 20px auto 10px auto;
+  width: 95%;
+}
+.rate-cont label {
+  margin-right: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+}
+.rate-cont input[type="number"] {
+  width: 40px;
+  margin-right: 0px;
+  border: none;
+  height: 20px;
+}
+.rate-cont span {
+  margin: 0;
+  padding: 0;
+  color: white;
+  margin-right: 5px;
+  font-weight: 600;
+}
+.persave {
+  margin-top: 20px;
+}
+
+.currency-cont {
+  width: 91%;
+  margin: 25px auto 25px auto;
+}
+.currency-cont select {
+  padding: 3px 0px 3px 10px;
+  border: none;
+}
+.cur-cont button {
+  display: block;
+  margin: 5px auto 10px auto;
+  background-color: #f19920;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  padding: 5px 15px;
+}
+.money-cont {
+  max-width: 880px;
+  margin: 0 auto;
+}
+.per-money {
+  display: block;
+  background-color: white;
+  width: 95%;
+  margin: 25px auto 0 auto;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding: 15px 0;
+  position: relative;
+}
+.per-money h1 {
+  position: absolute;
+  top: -10px;
+  right: 30px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.per-money h3 {
+  font-size: 16px;
+  margin: 5px 0 5px 20px;
+}
+.header-radius {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.total-money {
+  width: 95%;
+  max-width: 840px;
+  background-color: #242424;
+  margin: 0 auto 0 auto;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 10px 0 0 0;
+  color: white;
+  display: none;
+}
+.displaymoney {
+  display: block;
+}
+.weekly {
+  margin: 10px 10px 0px 25px;
+  display: flex;
+}
+.monthly,
+.yearly {
+  margin: 0px 10px 0px 25px;
+  display: flex;
+}
+.weekly img,
+.monthly img,
+.yearly img {
+  width: 15px;
+  margin-right: 10px;
+}
+.weekly p,
+.monthly p,
+.yearly p {
+  font-weight: 600;
+  margin-left: 10px;
+}
+.applied-rate {
+  margin: 0 0 0 25px;
+  padding-bottom: 20px;
+}
+.weekly span,
+.monthly span,
+.yearly span {
+  margin-top: 16px;
+  font-weight: 600;
+}
+
+.inputsaving {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  max-width: 512px;
+  justify-content: center;
+}
+.inputsaving input {
+  width: 80%;
+  padding: 10px 0 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  max-width: 300px;
+}
+.money-submit,
+.money-close {
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  background-color: #f19920;
+  color: white;
+  width: 40px;
+  padding: 5px 0px;
+  margin-left: 10px;
+}
+
+.quote-cont {
+  display: block;
+  background-color: #242424;
+  width: 95%;
+  margin: 25px auto;
+  border-radius: 15px;
+  padding: 30px 0 25px 0;
+  position: relative;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  position: relative;
+  max-width: 840px;
+}
+.quote-cont p {
+  width: 90%;
+  margin: 15px auto;
+}
+.quote-cont img {
+  width: 15px;
+  background-color: white;
+  padding: 5px;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+.info-cont {
+  display: none;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 10;
+  background-color: #242424;
+  color: white;
+  overflow: hidden;
+  outline: solid;
+  padding-bottom: 50px;
+}
+.info-display {
+  display: block;
+}
+.info-header {
+  width: 90%;
+  margin: 70px auto 20px auto;
+  text-align: center;
+  font-size: 24px;
+  margin-top: 70px;
+}
+.info-footer {
+  margin-top: 65vh;
+  text-align: center;
+}
+.info-cont a {
+  text-align: center;
+  text-decoration: none;
+  color: #3d6fd3;
+  text-decoration: underline;
+  font-size: 24px;
+  margin: 0 auto;
+  display: block;
+}
+.info-cont span {
+  top: 20px;
+  right: 20px;
+  position: absolute;
+  font-size: 24px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@keyframes rateshow {
   from {
-    transform: rotate(0deg);
+    height: 0%;
   }
   to {
-    transform: rotate(360deg);
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .choose-btn {
+    width: 100%;
+  }
+  .choose-btn button {
+    padding: 10px 25px;
+    font-size: 14px;
+    width: 100%;
+    margin: 0 5px;
+  }
+  .rate-cont {
+    display: block;
+  }
+  .rate-adjust {
+    margin-top: 10px;
+  }
+  .h1-title {
+    font-size: 24px;
   }
 }
