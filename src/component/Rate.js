@@ -51,6 +51,7 @@ const Rate = ({info,setInfo,rate,setRate,setCard,forMoney,money,moneyCard}) => {
                         <input type="checkbox" onChange={cons} checked={rate.useDec ? true : false} />
                         <label htmlFor="dec">Use Decimal</label>
                     </div>
+                    <span className="rate-title">rate % :</span>
                     <div className ="rate-cont">
                         <label htmlFor="cur-week">Weekly:</label>
                         <input type="number" max="100" placeholder="rate %" value={rate.week}

@@ -48,20 +48,22 @@ const Money = ({info,setInfo,rate,setRate,money,forMoney,setCard,moneyCard,total
                     </h3>
                 </div>
                 <div className={`total-money ${info.moneyShow ? "displaymoney" : ""}`}>
-                     <div className="weekly">
-                         <img src={plus} alt="" onClick={() => sumDate("weeks")}/>
-                         <img src={minus} alt="" onClick={() => decDate("weeks")}/>
-                         <span>{totalDate.weeks}</span>
-                         {info.id == 1 ? <p>Week  : {rate.currency + (moneyCard.dec ? numberWithCommasDec(moneyCard.weeky/totalDate.weeks) : numberWithCommas(moneyCard.weeky/totalDate.weeks))} {perDate(moneyCard.perSave)} </p>
-                         : info.id == 2 ? <p>Week  : {rate.currency + (moneyCard.dec ? numberWithCommasDec(moneyCard.weekx*totalDate.weeks) : numberWithCommas(moneyCard.weekx*totalDate.weeks))} {perDate(moneyCard.perSave)}</p> :"" }
-                     </div>
-                     <div className="monthly">
-                     <img src={plus} alt="" onClick={() => sumDate("months")}/>
-                         <img src={minus} alt="" onClick={() => decDate("months")}/>
-                         <span>{totalDate.months}</span>
-                         {info.id == 1 ? <p>Month  : {rate.currency + (moneyCard.dec ? numberWithCommasDec(moneyCard.monthy/totalDate.months) : numberWithCommas(moneyCard.monthy/totalDate.months))} {perDate(moneyCard.perSave)}</p>
-                         : info.id == 2 ? <p>Month   : {rate.currency + (moneyCard.dec ? numberWithCommasDec(moneyCard.monthx*totalDate.months) : numberWithCommas(moneyCard.monthx*totalDate.months))} {perDate(moneyCard.perSave)}</p> :"" }
-                     </div>
+                    {rate.perSave <= 2 ? 
+                    (<div className="weekly">
+                    <img src={plus} alt="" onClick={() => sumDate("weeks")}/>
+                    <img src={minus} alt="" onClick={() => decDate("weeks")}/>
+                    <span>{totalDate.weeks}</span>
+                    {info.id == 1 ? <p>Week  : {rate.currency + (moneyCard.dec ? numberWithCommasDec(moneyCard.weeky/totalDate.weeks) : numberWithCommas(moneyCard.weeky/totalDate.weeks))} {perDate(moneyCard.perSave)} </p>
+                    : info.id == 2 ? <p>Week  : {rate.currency + (moneyCard.dec ? numberWithCommasDec(moneyCard.weekx*totalDate.weeks) : numberWithCommas(moneyCard.weekx*totalDate.weeks))} {perDate(moneyCard.perSave)}</p> :"" }
+                </div>):""}
+                    {rate.perSave <= 3 ? 
+                    (<div className="monthly">
+                    <img src={plus} alt="" onClick={() => sumDate("months")}/>
+                        <img src={minus} alt="" onClick={() => decDate("months")}/>
+                        <span>{totalDate.months}</span>
+                        {info.id == 1 ? <p>Month  : {rate.currency + (moneyCard.dec ? numberWithCommasDec(moneyCard.monthy/totalDate.months) : numberWithCommas(moneyCard.monthy/totalDate.months))} {perDate(moneyCard.perSave)}</p>
+                        : info.id == 2 ? <p>Month   : {rate.currency + (moneyCard.dec ? numberWithCommasDec(moneyCard.monthx*totalDate.months) : numberWithCommas(moneyCard.monthx*totalDate.months))} {perDate(moneyCard.perSave)}</p> :"" }
+                    </div>) : ""}
                      <div className="yearly">
                          <img src={plus} alt="" onClick={() => sumDate("years")}/>
                          <img src={minus} alt="" onClick={() => decDate("years")}/>
