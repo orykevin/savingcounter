@@ -13,7 +13,7 @@ body {
   width: 90%;
   display: flex;
   justify-content: space-between;
-  margin: 20px auto;
+  margin: 20px auto 0px auto;
 }
 .logo {
   margin: 10px 20px;
@@ -47,6 +47,7 @@ body {
   justify-content: space-between;
   display: flex;
   margin: 0 auto;
+  max-width: 420px;
 }
 .choose-btn button {
   padding: 10px 25px;
@@ -300,7 +301,7 @@ body {
   color: white;
   overflow: hidden;
   outline: solid;
-  padding-bottom: 50px;
+  padding-bottom: 90px;
 }
 .info-display {
   display: block;
